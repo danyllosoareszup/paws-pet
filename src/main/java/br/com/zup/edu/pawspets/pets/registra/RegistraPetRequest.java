@@ -55,7 +55,6 @@ public class RegistraPetRequest {
                 .orElseThrow(() -> new IllegalStateException("tutor nao encontrado"));
 
         return new Pet(nome, raca, idade, tutor, Sexo.valueOf(sexo));
-
     }
 
 }
