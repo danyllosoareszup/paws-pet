@@ -15,7 +15,7 @@ phases:
       - echo Build started on `date`
       - mvn install
       - docker build -t zcoders-danyllo-paws-pet .
-      - docker save hello-app | gzip > zcoders-danyllo-paws-pet.tar.gz
+      - docker save zcoders-danyllo-paws-pet | gzip > zcoders-danyllo-paws-pet.tar.gz
       - docker tag zcoders-danyllo-paws-pet:latest public.ecr.aws/i2c7a5l2/zcoders-danyllo-paws-pet:latest
   post_build:
     commands:
