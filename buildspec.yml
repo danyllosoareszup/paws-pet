@@ -2,11 +2,14 @@ version: 0.2
 
 phases:
   install:
+    commands:
+      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_TOKEN
     runtime-versions:
       java: corretto17
   pre_build:
     commands:
       - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/i2c7a5l2
+      -
   build:
     commands:
       - echo Build started on `date`
